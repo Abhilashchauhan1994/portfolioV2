@@ -15,6 +15,7 @@ export interface ContactInfo {
   linkedin: string;
   twitter?: string;
   website?: string;
+  blog?: string;
 }
 
 export interface Skill {
@@ -32,7 +33,12 @@ export type SkillCategory =
   | "Monitoring & Observability"
   | "Programming Languages"
   | "Version Control"
-  | "Security";
+  | "Security"
+  | "Linux & Production Support"
+  | "Automation & Scripting"
+  | "DevOps & CI/CD"
+  | "Application Support"
+  | "Reliability Engineering";
 
 export interface Experience {
   id: string;
@@ -76,3 +82,25 @@ export type ProjectCategory =
   | "Monitoring"
   | "Security"
   | "Platform Engineering";
+
+export type ProfessionalProjectCategory =
+  | "Automation"
+  | "Reliability Engineering"
+  | "Migration"
+  | "Observability";
+
+export interface ProfessionalProject {
+  id: string;
+  title: string;
+  category: ProfessionalProjectCategory;
+  duration: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+  impact: {
+    metric: string;
+    value: string;
+  }[];
+  featured?: boolean;
+  projectUrl?: string;
+}

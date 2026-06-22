@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, RefObject } from 'react';
+import { useEffect, useState, useRef, RefObject } from "react";
 
 interface UseInViewOptions {
   threshold?: number;
@@ -7,9 +7,10 @@ interface UseInViewOptions {
 }
 
 export function useInView<T extends Element = Element>(
-  options: UseInViewOptions = {}
-): [RefObject<T>, boolean] {
-  const { threshold = 0.1, triggerOnce = true, rootMargin = '0px' } = options;
+  options: UseInViewOptions = {},
+): [RefObject<T | null>, boolean] {
+  const { threshold = 0.1, triggerOnce = true, rootMargin = "0px" } = options;
+
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
 
@@ -21,6 +22,7 @@ export function useInView<T extends Element = Element>(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
+
           if (triggerOnce) {
             observer.disconnect();
           }
@@ -28,7 +30,10 @@ export function useInView<T extends Element = Element>(
           setInView(false);
         }
       },
-      { threshold, rootMargin }
+      {
+        threshold,
+        rootMargin,
+      },
     );
 
     observer.observe(element);

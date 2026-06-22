@@ -1,7 +1,6 @@
 import type { Skill } from "../../types";
 
 export const skills: Skill[] = [
-  // Linux & Production Support
   {
     name: "Linux Administration",
     category: "Linux & Production Support",
@@ -28,7 +27,6 @@ export const skills: Skill[] = [
     proficiency: 90,
   },
 
-  // Monitoring & Observability
   {
     name: "Grafana",
     category: "Monitoring & Observability",
@@ -60,7 +58,6 @@ export const skills: Skill[] = [
     proficiency: 80,
   },
 
-  // Automation & Scripting
   {
     name: "Bash/Shell Scripting",
     category: "Automation & Scripting",
@@ -72,15 +69,20 @@ export const skills: Skill[] = [
     category: "Automation & Scripting",
     proficiency: 85,
   },
+  {
+    name: "Ansible",
+    category: "Automation & Scripting",
+    proficiency: 75,
+  },
 
   {
     name: "Jenkins",
-    category: "DevOps & CI/CD",
+    category: "CI/CD",
     proficiency: 85,
   },
   {
     name: "CI/CD Pipelines",
-    category: "DevOps & CI/CD",
+    category: "CI/CD",
     proficiency: 82,
   },
   {
@@ -96,17 +98,17 @@ export const skills: Skill[] = [
 
   {
     name: "AWS",
-    category: "Cloud & Infrastructure",
+    category: "Cloud Platforms",
     proficiency: 70,
   },
   {
     name: "Docker",
-    category: "Cloud & Infrastructure",
+    category: "Container Orchestration",
     proficiency: 75,
   },
   {
     name: "Infrastructure Monitoring",
-    category: "Cloud & Infrastructure",
+    category: "Monitoring & Observability",
     proficiency: 85,
   },
   {
@@ -132,7 +134,6 @@ export const skills: Skill[] = [
     proficiency: 80,
   },
 
-  // Reliability Engineering
   {
     name: "SRE Practices",
     category: "Reliability Engineering",
@@ -160,7 +161,6 @@ export const skills: Skill[] = [
   },
 ];
 
-// Group skills by category for easier rendering
 export const skillsByCategory = skills.reduce(
   (acc, skill) => {
     if (!acc[skill.category]) {
